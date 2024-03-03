@@ -1,4 +1,7 @@
 
+const MAX_WIDTH = 960;
+const MAX_HEIGHT = 680;
+
 const rows = document.querySelectorAll(".row");
 // const row = document.createElement("div");
 // row.classList.add("row");
@@ -15,6 +18,9 @@ rows.forEach((row) =>
     for (let i = 0; i < 16; i++){
             const square = document.createElement("div");
             square.classList.add("square");
+            square.style.cssText = "width:60px" + ";height:42.5px";
+            // square.style.cssText ='width: 20px; height: 20px;';
+
             square.addEventListener("mouseover", function (){
                 square.style.backgroundColor="yellow";
             });
@@ -40,7 +46,8 @@ function generateBoard(){
 
     // Create corresponding size board
     const container = document.querySelector(".container");
-    let width = 960/size;
+    let square_width = MAX_WIDTH/size;
+    let square_height = MAX_HEIGHT/size;
 
     for (let i = 0; i < size; i++){
         const row = document.createElement("div");
@@ -51,7 +58,8 @@ function generateBoard(){
             square.addEventListener("mouseover", function (){
                 square.style.backgroundColor="yellow";
             });
-            square.style.cssText = "width:" + width + ";";
+            square.style.cssText = "width:" + square_width + "px; height: " + square_height + "px;";
+            // square.style.cssText ='width: 20px; height: 20px;';
             row.appendChild(square);
             
         }
