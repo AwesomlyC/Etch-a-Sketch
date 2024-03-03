@@ -1,7 +1,7 @@
 
 const MAX_WIDTH = 960;
 const MAX_HEIGHT = 680;
-
+let erase_mode = false;
 const rows = document.querySelectorAll(".row");
 // const row = document.createElement("div");
 // row.classList.add("row");
@@ -22,15 +22,26 @@ rows.forEach((row) =>
             // square.style.cssText ='width: 20px; height: 20px;';
 
             square.addEventListener("mouseover", function (){
-                square.style.backgroundColor="yellow";
+                if (erase_mode === false)
+                    square.style.backgroundColor="yellow";
+                else
+                    square.style.backgroundColor="#f1f1f1";
             });
             row.appendChild(square);
         }
 });
 
-
-function changeColor(){
-
+function eraseColor(){
+    if (erase_mode === false){
+        let erase_button = document.querySelector("#erase");
+        erase_button.setAttribute('id','erase_active');
+        erase_mode = true;
+    }
+    else{
+        let erase_button = document.querySelector("#erase_active");
+        erase_button.setAttribute('id','erase');
+        erase_mode = false;
+    }
 }
 
 function generateBoard(){
@@ -56,10 +67,12 @@ function generateBoard(){
             const square = document.createElement("div");
             square.classList.add("square");
             square.addEventListener("mouseover", function (){
-                square.style.backgroundColor="yellow";
+                if (erase_mode === false)
+                    square.style.backgroundColor="yellow";
+                else
+                    square.style.backgroundColor="#f1f1f1";
             });
             square.style.cssText = "width:" + square_width + "px; height: " + square_height + "px;";
-            // square.style.cssText ='width: 20px; height: 20px;';
             row.appendChild(square);
             
         }

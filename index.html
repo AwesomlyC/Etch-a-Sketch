@@ -7,26 +7,30 @@
     <title>Etch-a-Sketch</title>
 </head>
 <body>
-    <button type="button" onclick="generateBoard()">Generate Board</button>
-    <div class="container">
-        <div class="row"></div>
-        <div class="row"></div>
-        <div class="row"></div>
-        <div class="row"></div>
-        <div class="row"></div>
-        <div class="row"></div>
-        <div class="row"></div>
-        <div class="row"></div>
-        <div class="row"></div>
-        <div class="row"></div>
-        <div class="row"></div>
-        <div class="row"></div>
-        <div class="row"></div>
-        <div class="row"></div>
-        <div class="row"></div>
-        <div class="row"></div>
-
-
+    
+    <div class="screen">
+        <div class="container">
+            <div class="row"></div>
+            <div class="row"></div>
+            <div class="row"></div>
+            <div class="row"></div>
+            <div class="row"></div>
+            <div class="row"></div>
+            <div class="row"></div>
+            <div class="row"></div>
+            <div class="row"></div>
+            <div class="row"></div>
+            <div class="row"></div>
+            <div class="row"></div>
+            <div class="row"></div>
+            <div class="row"></div>
+            <div class="row"></div>
+            <div class="row"></div>
+        </div>
+        <div class="button_area">
+            <button type="button" onclick="generateBoard()">Generate Board</button>
+            <button type="button" id="erase" onclick="eraseColor()">Eraser Button</button>
+        </div>
     </div>
 </body>
 <script src="script.js"></script>
